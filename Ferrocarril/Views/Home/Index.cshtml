@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<br />
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+        <div class="card h-100">
+            <img class="card-img-top" src="~/Imagenes/nca.jpg" alt="Bases Operativas">
+            <a class="btn btn-primary" asp-controller="BaseOperativas" asp-action="Create"><i class="fa-solid fa-train fa-shake fa-lg" style="color: #ffffff;"></i><i class="fa-solid fa-plus fa-sm" style="color: #ffffff;"></i></a>
+            <div class="card-body">
+                <h5 class="card-title">Bases Operativas</h5>
+                <p class="card-text">En esta seccion podrás visualizar con detalles nuevas Bases Operativas, conoceras donde están ubicadas, podrás editar sus datos y  eliminarlas si fuera necesario .</p>
+
+                <form asp-controller="BaseOperativas" asp-action="Index">
+                    <input type="submit" value="Ver más..." class="btn btn-primary btn-sm" />
+                </form>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted"></small>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100">
+            <img src="~/Imagenes/Empleado.jpg" class="card-img-top" alt="Foto Empleados">
+            <a class="btn btn-primary" asp-controller="Empleado" asp-action="Create"><i class="fa-solid fa-train fa-shake fa-lg" style="color: #ffffff;"></i><i class="fa-solid fa-plus fa-sm" style="color: #ffffff;"></i></a>
+            <div class="card-body">
+                <h5 class="card-title">Nuestros Operarios</h5>
+                <p class="card-text">En esta seccion podrás conocer a todos nuestros operarios, visualizar detalles de cada uno, como también agregar nuevos, actualizar datos y eliminarlos si fuera necesario.</p>
+                <form asp-controller="Empleado" asp-action="Index">
+                    <input type="submit" value="Ver más..." class="btn btn-primary btn-sm" />
+                </form>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted"></small>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100">
+            <img src="~/Imagenes/categoria.jpg" class="card-img-top" alt="foto categorias">
+            <a class="btn btn-primary" asp-controller="Categoria" asp-action="Post"><i class="fa-solid fa-train fa-shake fa-lg" style="color: #ffffff;"></i><i class="fa-solid fa-plus fa-sm" style="color: #ffffff;"></i></a>
+            <div class="card-body">
+                <h5 class="card-title">Categorias</h5>
+                <p class="card-text">En esta sección conocerás todas la especialidades desarrolladas en nuestra empresa, conoceras en algunos detalles como tambien actualizar datos y eliminarlos si fuera necesario .</p>
+                <form asp-controller="Categoria" asp-action="Index">
+                    <input type="submit" value="Ver más..." class="btn btn-primary btn-sm" />
+                </form>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted"></small>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,80 @@
+﻿@model Ferrocarril.Models.BaseOperativa
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<html class="body" lang="en">
+<!-- divinectorweb.com -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive User Profile Card using HTML and CSS</title>
+
+    <link rel="stylesheet" href="~/css/site.css">
+</head>
+<body class="body">
+    <h3>Esta seguro de borrar la siguiente Base Operativa?</h3>
+
+
+    <hr />
+    <div class="wrapper">
+        <div class="user-card">
+            <div class="user-card-img">
+                <img src="~/Imagenes/pexels-photo-10143243.jpeg" alt="">
+            </div>
+            <div class="user-card-info">
+                <div >
+                    <p class="fs-2">Base Operativa</p>
+                    <hr />
+                    <dl class="row">
+                        <dt class="col-sm-6 ">
+                            @Html.DisplayNameFor(model => model.Descripcion)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Descripcion)
+                        </dd>
+                        <dt class="col-sm-6">
+                            @Html.DisplayNameFor(model => model.Ubicacion)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Ubicacion)
+                        </dd>
+                    </dl>
+                    <form asp-action="Delete">
+                        <input type="hidden" asp-for="IdBase" />
+                        <input type="submit" value="Delete" class="btn btn-danger" />
+                        <a asp-action="Index" class="btn btn-primary">Volver a Lista</a>
+                    </form>
+                </div>
+
+                <br />
+                <p><span>Informacion:</span> En esta vista podrá eliminar el registro de la base mostrada en los campos.</p>
+
+
+
+            </div>
+        </div>
+    </div>
+    <figure class="figure position-absolute m-0 opacity-06 z-index-100" style="bottom:0; right: 10px">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="444px" height="626px">
+            <defs>
+                <linearGradient id="PSgrad_1" x1="0%" x2="81.915%" y1="57.358%" y2="0%">
+                    <stop offset="0%" stop-color="rgb(255,255,255)" stop-opacity="1"></stop>
+                    <stop offset="100%" stop-color="rgb(0,54,207)" stop-opacity="0"></stop>
+                </linearGradient>
+
+            </defs>
+            <path fill-rule="evenodd" opacity="0.302" fill="rgb(72, 155, 248)" d="M816.210,-41.714 L968.999,111.158 L-197.210,1277.998 L-349.998,1125.127 L816.210,-41.714 Z"></path>
+            <path fill="url(#PSgrad_1)" d="M816.210,-41.714 L968.999,111.158 L-197.210,1277.998 L-349.998,1125.127 L816.210,-41.714 Z"></path>
+        </svg>
+    </figure>
+
+</body>
+</html>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

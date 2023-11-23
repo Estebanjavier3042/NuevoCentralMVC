@@ -1,0 +1,114 @@
+﻿@model IEnumerable<Ferrocarril.Models.Empleado>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="https://kit.fontawesome.com/d4139a8784.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
+    <link rel="stylesheet" type="text/cs" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css" />
+
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css" />
+
+
+
+</head>
+<body>
+    <h3 class="text-align-center">Lista de Operarios</h3>
+    <div><a asp-controller="Empleado" asp-action="Create" class="btn btn-primary ">Crear</a></div>
+    <div class="container m-1">
+        <table id="aver" class="display nowrap" style="width:100%">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Legajo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Nombre)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Apellido)
+                    </th>
+                   
+                  
+                    <th>
+                        @Html.DisplayNameFor(model => model.BaseOperativa)
+                    </th>
+                  
+                    <th>
+                        @Html.DisplayNameFor(model => model.Categoria)
+                    </th>
+                    <th>
+                        Acciones
+                    </th>
+
+                   
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Legajo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nombre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Apellido)
+                        </td>
+                        
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BaseOperativa.Descripcion)
+                        </td>
+                       
+                       
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Categoria.Descripcion)
+                        </td>
+                      
+
+                        <td class="Center">
+
+
+                            <a asp-controller="Empleado" asp-action="Edit" asp-route-id="@item.Legajo" class="btn btn-primary ">Actualizar</a>
+                            <a asp-controller="Empleado" asp-action="Details" asp-route-id="@item.Legajo" class="btn btn-primary ">Detalles</a>
+                            <a asp-controller="Empleado" asp-action="Delete" asp-route-id="@item.Legajo" class="btn btn-primary ">Borrar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>Legajo</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>BaseOperativa</th>
+                    <th>Categoria</th>
+                    <th>Acciones</th>
+                   
+                    
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</body>
+
+
+</html>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.js"> </script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"> </script>
+<script type="text/javascript">
+    new DataTable('#aver', {
+        responsive: true,
+        lengthMenu: [5, 7],
+        language: {
+            url: '//cdn.datatables.net/plug-ins/1.13.7/i18n/es-ES.json',
+        },
+    });
+</script>

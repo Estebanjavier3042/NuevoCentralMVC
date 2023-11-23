@@ -1,0 +1,89 @@
+﻿@model IEnumerable<Ferrocarril.Models.BaseOperativa>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="https://kit.fontawesome.com/d4139a8784.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
+    <link rel="stylesheet" type="text/cs" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css" />
+
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css" />
+
+
+
+</head>
+<body>
+    <h3 class="text-align-center">Lista de Bases</h3>
+    <div><a asp-controller="BaseOperativas" asp-action="Create"  class="btn btn-primary ">Nueva base</a></div>
+    <div class="container m-4">
+        <table id="aver" class="display nowrap" style="width:90%">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.IdBase)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Descripcion)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Ubicacion)
+                    </th>
+
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IdBase)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Descripcion)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Ubicacion)
+                        </td>
+
+                        <td class="Center">
+
+
+                            <a asp-controller="BaseOperativas" asp-action="Edit" asp-route-id="@item.IdBase" class="btn btn-primary ">Actualizar</a>
+
+                            <a asp-controller="BaseOperativas" asp-action="Delete" asp-route-id="@item.IdBase" class="btn btn-primary ">Borrar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>Id</th>
+                    <th>Descripcion</th>
+                    <th>Ubicacion</th>
+                    <th>Acciones</th>
+
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</body>
+
+
+</html>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.js"> </script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"> </script>
+<script type="text/javascript">
+    new DataTable('#aver', {
+        responsive: true,
+        lengthMenu: [5, 7],
+        language: {
+            url: '//cdn.datatables.net/plug-ins/1.13.7/i18n/es-ES.json',
+        },
+    });
+</script>

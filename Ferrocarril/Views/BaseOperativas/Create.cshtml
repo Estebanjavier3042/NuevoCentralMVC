@@ -1,0 +1,106 @@
+﻿@model Ferrocarril.Models.BaseOperativa
+
+
+
+@{
+    ViewData["Title"] = "Create";
+}
+<html>
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Crear</h1>
+
+    <h4>Nueva Base operativa</h4>
+    <hr />
+    
+    <div class="container">
+        <div class="contact__wrapper shadow-lg mt-n7">
+            <div class="row no-gutters">
+                <div class="col-lg-5 contact-info__wrapper gradient-brand-color p-5 order-lg-3">
+                    <h4 class="color--white mb-2">Nueva Base Operativa</h4>
+
+                    <ul class="contact-info__list list-style--none position-relative z-index-101">
+                        <li class="mb-4 pl-6">
+                            <p> En la vista de creación de una base operativa , se presenta un formulario  donde se solicitan los datos generales de la base.  </p>
+                            
+                        </li>
+                        <li class="mb-4 pl-4">
+                            <p> Este formulario incluye campos como descripción y ubicacion de esta nueva base</p>
+                            
+                        </li>
+                        <li class="mb-4 pl-4">
+                            <p> Es muy importante completar dichos campos para poder crearla</p>  
+                        </li>
+                    </ul>
+
+                    <figure class="figure position-absolute m-0 opacity-06 z-index-100" style="bottom:0; right: 10px">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="444px" height="626px">
+                            <defs>
+                                <linearGradient id="PSgrad_1" x1="0%" x2="81.915%" y1="57.358%" y2="0%">
+                                    <stop offset="0%" stop-color="rgb(255,255,255)" stop-opacity="1"></stop>
+                                    <stop offset="100%" stop-color="rgb(0,54,207)" stop-opacity="0"></stop>
+                                </linearGradient>
+
+                            </defs>
+                            <path fill-rule="evenodd" opacity="0.302" fill="rgb(72, 155, 248)" d="M816.210,-41.714 L968.999,111.158 L-197.210,1277.998 L-349.998,1125.127 L816.210,-41.714 Z"></path>
+                            <path fill="url(#PSgrad_1)" d="M816.210,-41.714 L968.999,111.158 L-197.210,1277.998 L-349.998,1125.127 L816.210,-41.714 Z"></path>
+                        </svg>
+                    </figure>
+                </div>
+
+                <div class="col-lg-7 contact-form__wrapper p-5 order-lg-1">
+                    <form asp-action="Create" class="contact-form form-validate" novalidate="novalidate">
+                        <div class="row">
+                            <div class="col-sm-12 mb-4">
+                                <div class="form-group">
+                                    <label asp-for="Descripcion">Descripcion</label>
+                                    <input asp-for="Descripcion" type="text" class="form-control" placeholder="Descripción">
+                                     <span asp-validation-for="Descripcion"></span>
+                                    <div asp-validation-summary="ModelOnly"></div>
+                            
+                            
+                           
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12 mb-4">
+                                <div class="form-group">
+                                    <label asp-for="Ubicacion">Ubicación</label>
+                                    <input asp-for="Ubicacion" type="text" class="form-control" placeholder="Ubicación">
+                                     <span asp-validation-for="Ubicacion"></span>
+                                </div>
+                            </div>
+
+                         
+
+                            <div class="col-sm-12 mb-3">
+                                
+                                <input type="submit" value="Create" class="btn btn-primary" />
+                                <a asp-action="Index" class="btn btn-primary">Volver a Lista</a>
+                            </div>
+                        
+
+                        </div>
+                    </form>
+                </div>
+               
+
+            </div>
+        </div>
+    </div>
+    
+
+  
+</body>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+</html>
